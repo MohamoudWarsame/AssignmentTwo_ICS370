@@ -1,0 +1,43 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import org.json.simple.JSONObject;
+
+public class Json {
+
+	public static void main(String[] args) {
+		JSONObject obj = new JSONObject();
+		JSONObject obj1 = new JSONObject();
+		JSONObject obj2 = new JSONObject();
+		JSONObject obj3 = new JSONObject();
+		
+		obj.put("product_ID", "48934j");
+		obj1.put("product_name", "skateboard");
+		obj2.put("product_name1", "surfboard");
+		obj3.put("product_ID1", "1adf4");
+		
+
+		
+		
+
+		try {
+
+			FileWriter file = (new FileWriter("/Users/Mahamoud/Documents/life.json"));
+			file.write(obj.toJSONString());
+			file.write(obj1.toJSONString());
+			file.write(obj2.toJSONString());
+			file.write(obj3.toJSONString());
+			file.flush();
+			file.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.print(obj +"\n"+ obj1 +"\n"+ obj2 +"\n"+ obj3 );
+
+	     }
+
+	
+		
+
+	}
